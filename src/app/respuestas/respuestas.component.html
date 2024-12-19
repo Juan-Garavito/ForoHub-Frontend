@@ -1,0 +1,33 @@
+<section *ngIf="topico != undefined">
+  <section class="topic">
+    <h2>Tópico</h2>
+    <ul class="topic-info">
+      <li data-label="Título">{{topico.topico.titulo}}</li>
+      <li data-label="Mensaje">{{topico.topico.mensaje}}</li>
+      <li data-label="Fecha de Creación">{{topico.topico.fechaCreacion}}</li>
+      <li data-label="Nombre del Curso">{{topico.topico.nombreCurso}}</li>
+      <li data-label="Categoría del Curso">{{topico.topico.categoriaCurso}}</li>
+    </ul>
+  </section>
+
+  <section class="responses">
+    <h2>Respuestas</h2>
+    <ng-container *ngIf="topico.respuestas.length > 0; else noResponses">
+      <div class="response" *ngFor="let respuesta of topico.respuestas">
+        <div class="response-info">
+          <span>{{respuesta.fechaCreacion}}</span>
+          <span class="response-author">{{respuesta.autor.nombre}}</span>
+        </div>
+        <div class="response-message">{{respuesta.mensaje}}</div>
+        <div class="response-info-solution">
+          <span class="response-author">{{respuesta.autor.correo}}</span>
+          <span class="solution" *ngIf="respuesta.solucion">{{respuesta.solucion}}</span>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #noResponses>
+      <p class="no-responses">No hay respuestas por ahora</p>
+    </ng-template>
+  </section>
+</section>
+

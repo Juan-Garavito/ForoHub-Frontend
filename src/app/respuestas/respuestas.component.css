@@ -1,0 +1,125 @@
+section {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+h2 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background-color: var(--background-color);
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: #e8f0fe;
+}
+
+.topic{
+  background-color: var(--card-background);
+}
+
+.topic-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.topic-info li {
+  font-weight: bold;
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+}
+
+.topic-info li::before {
+  content: attr(data-label);
+  font-weight: normal;
+  color: var(--primary-color);
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.responses {
+  margin-top: 2rem;
+  background-color: var(--card-background);
+}
+
+.response-info-solution{
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.response {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.response:hover {
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.response-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.response-message {
+  margin-bottom: 0.5rem;
+}
+
+.response-author {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.solution {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  display: inline-block;
+}
+
+.no-responses {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  section {
+    padding: 1rem;
+  }
+
+  .topic-info {
+    grid-template-columns: 1fr;
+  }
+}

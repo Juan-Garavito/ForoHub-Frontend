@@ -1,0 +1,26 @@
+<section class="profile-container">
+  <p class="welcome-message">BIENVENIDO {{usuario?.nombre | uppercase}}</p>
+  <ng-container *ngIf="usuario != undefined">
+    <section class="personal-data">
+      <h2>Datos Personales</h2>
+      <p><strong>Nombre:</strong> {{usuario.nombre}}</p>
+      <p><strong>Correo:</strong> {{usuario.correo}}</p>
+    </section>
+    <section class="topics">
+      <h2>Mis tópicos</h2>
+      <ul>
+        <li *ngFor="let topico of usuario.topicos" class="topic-item">
+          <p class="topic-title">{{topico.titulo}}</p>
+          <p class="topic-message">{{topico.mensaje}}</p>
+          <div class="topic-details">
+            <p>Fecha de creación: {{topico.fechaCreacion | date:'medium'}}</p>
+            <p>Curso: {{topico.nombreCurso}}</p>
+            <p>Categoría: {{topico.categoriaCurso}}</p>
+          </div>
+          <a [routerLink]="['/respuestas/topico/', topico.id]" class="view-responses">Ver Respuestas</a>
+        </li>
+      </ul>
+    </section>
+  </ng-container>
+</section>
+

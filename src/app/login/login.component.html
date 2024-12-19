@@ -1,0 +1,13 @@
+<section>
+  <form [formGroup]="form" >
+    <h1>Iniciar sesión</h1>
+    <p>Ingresa tus datos para iniciar sesión</p>
+    <input type="text" formControlName="correo" placeholder="Digita tú correo">
+    <input type="password" formControlName="contraseña" placeholder="Dame tú contraseña">
+    <input type="submit" value="Iniciar sesión" (click)="login()">
+    <p class="erro" *ngIf="error">El correo o contraseña esta incorrecto</p>
+    <p class="advertencia" *ngIf="advertencia.length>0">{{advertencia}} </p>
+    <p class="cargando" *ngIf="cargando">Enviando datos....</p>
+  </form>
+</section>
+

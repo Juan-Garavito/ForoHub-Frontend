@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --background-color: #ffc568;
+  --text-color: #34495e;
+  --error-color: #e74c3c;
+  --input-bg-color: #ecf0f1;
+  --button-hover-color: #2980b9;
+  --secondary-color: #2ecc71;
+  --card-bg-color: #ffffff;
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --card-background: #ffffff;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: var(--background-color);
+}
